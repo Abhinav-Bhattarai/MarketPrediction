@@ -42,9 +42,9 @@ router.post("/", RegisterMiddleware, async (req, res) => {
       res.cookie("userid", data.UserID, cookie_option);
       res.cookie("id", data._id, cookie_option);
     } catch {
-      return res.json({ error: true, reason: "Database Cluttered" });
+      return res.json({ error: true, type: "DatabaseClutter" });
     }
   } catch {
-    return res.json({ error: true, reason: "Exception Error" });
+    return res.json({ error: true, type: "ExceptionError" });
   }
 });

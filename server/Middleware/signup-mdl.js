@@ -15,9 +15,12 @@ export const RegisterMiddleware = (req, res, next) => {
     if (regex.exec(Password) !== null) {
       if (Username.length > 5 && Email.length > 11) {
         if (CheckForExistingUserBase()) {
-            next();
+          next();
         }
+        return res.json({ error: true, reason: "ExistingUserbase" });
       }
+      return res.json({ error: true, type: "PasswordContentError" });
     }
+    return res.json({ error: true, type: "PasswordMatchError" });
   }
 };
