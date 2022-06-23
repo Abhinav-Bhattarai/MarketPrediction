@@ -13,7 +13,7 @@ const HashPassword = async (Password) => {
   return hashedPass;
 };
 
-const GenerateJsonWebToken = (data) => {
+export const GenerateJsonWebToken = (data) => {
   const token = jwt.sign(data, process.env.JWT_AUTH_TOKEN);
   return token;
 };
