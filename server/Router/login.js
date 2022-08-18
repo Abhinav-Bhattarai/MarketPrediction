@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import { UserModel } from "../Models/UserModel";
 import { GenerateJsonWebToken } from "./register";
 
+const express = require('express');
 const router = express.Router();
 
 const compareHash = async (Password, hash) => {
@@ -26,7 +27,7 @@ router.post("/", async (req, res) => {
           res.cookie("authToken", token, cookie_option);
           res.cookie("userid", data.UserID, cookie_option);
           res.cookie("id", data._id, cookie_option);
-          return res.json({ error: false, type: 'None' })
+          return res.json({ error: false  })
       }
     }
   } catch {

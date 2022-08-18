@@ -1,0 +1,17 @@
+.main {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.7) 75%,
+      #000000 100%
+    ),
+    url("./assets/background.jpg");
+  -webkit-background-position: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  background-size: cover;
+  max-height: 440px;
+  max-width: 60%;
+}
