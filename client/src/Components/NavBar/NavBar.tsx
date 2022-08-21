@@ -60,7 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const pages = [
-  { name: "Cyptocurrencies", open: false },
+  { name: "Cryptocurrencies", open: false },
   { name: "Stocks", open: false },
   { name: "Market", open: false },
 ];
@@ -87,7 +87,7 @@ const NavBar = () => {
   };
   return (
     <AppBar
-      position="fixed"
+      position="sticky"
       color="secondary"
       sx={{ backgroundColor: theme.palette.primary.main }}
     >
@@ -113,7 +113,7 @@ const NavBar = () => {
           }}
         >
           {navigation.map((page) => (
-            <NavLink to={`/${page.name}`} style={{ textDecoration: "none" }}>
+            <NavLink to={`/${page.name.toLowerCase()}`} style={{ textDecoration: "none" }}>
               {({ isActive }) => (
                 <Button
                   key={page.name}
